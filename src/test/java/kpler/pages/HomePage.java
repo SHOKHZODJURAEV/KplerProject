@@ -18,7 +18,7 @@ public class HomePage {
     @FindBy(xpath = "//*[text()='Company']")
     public WebElement companyModule;
 
-    @FindBy(xpath = "//li[@class='link']")
+    @FindBy(xpath = "//li[@class='link active']")
     public WebElement contactModule;
 
     @FindBy(xpath = "//li[@class='nav-platform-links']")
@@ -34,7 +34,7 @@ public class HomePage {
     public WebElement scrollUp;
 
     @FindBy( css = "[class='navbar navbar-fixed-top affix']")
-    public WebElement companyInformationScrolldown;
+    public WebElement verifyScrolldownStage;
 
 
     @FindBy(xpath = "//ul[@class='nav navbar-nav']//li[@class]")

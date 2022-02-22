@@ -20,7 +20,7 @@ public class VerifyCompanyInfoStep {
     @Then("Verify company information displayed on the page")
     public void verify_company_information_displayed_on_the_page() {
 
-        Assert.assertTrue(homePage.companyInformationScrolldown.isDisplayed());
+        Assert.assertTrue(homePage.verifyScrolldownStage.isDisplayed());
 
 
     }

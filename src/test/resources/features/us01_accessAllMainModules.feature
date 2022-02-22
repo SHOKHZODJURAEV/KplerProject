@@ -22,34 +22,34 @@ Feature: As a user, I should be able to access all the main modules of the app
     Then Verify contact information displayed on the page
 
 
-    Scenario: as a user I should be able to click Login module and verify sub-modules are displayed
+  Scenario: as a user I should be able to click Login module and verify sub-modules are displayed
 
     When  User click on login module
     Then  Verify user should able to see sub-modules below
-    |LNG |
-    |LPG |
-    |OIL |
-    |CPP |
-    |COAL|
+      | LNG  |
+      | LPG  |
+      | OIL  |
+      | CPP  |
+      | COAL |
 
-      Scenario Outline: When user click on each login sub-module, user should land on the login page
+  Scenario Outline: When user click on each login sub-module, user should land on the login page
 
-      And  User click on login module
-      When User click on each "<modules>"
-      Then Verify user land on login page
-        Examples:
-          |modules|
-          |LNG |
-          |LPG |
-          |OIL |
-          |CPP|
-          |COAL|
+    And  User click on login module
+    When User click on each "<modules>"
+    Then Verify user land on login page
+    Examples:
+      | modules |
+      | LNG     |
+      | LPG     |
+      | OIL     |
+      | CPP     |
+      | COAL    |
 
-        Scenario: as a user I should be able to click Ask for a Trial module and verify ok body;
+  Scenario: as a user I should be able to click Ask for a Trial module and verify ok body;
 
 
-        When  Click input box provide valid credential
-        Then  Click Ask for a Trial button and verify ok body
+    When  Click input box provide valid credential
+    Then  Click Ask for a Trial button and verify ok body
 
 
 
