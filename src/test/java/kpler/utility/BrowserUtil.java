@@ -9,12 +9,12 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class BrowserUtil {
 
 
-
-    public static List<String> getElementsText(List<WebElement> list){
+    public static List<String> getElementsText(List<WebElement> list) {
         List<String> elemTexts = new ArrayList<>();
         for (WebElement el : list) {
             elemTexts.add(el.getAttribute("innerHTML").trim());
@@ -22,14 +22,14 @@ public class BrowserUtil {
         return elemTexts;
     }
 
-    public static List<String> getAllText(List<WebElement> lstOfWebElements ){
+    public static List<String> getAllText(List<WebElement> lstOfWebElements) {
 
         List<String> allTextLst = new ArrayList<>();
         for (WebElement eachElement : lstOfWebElements) {
-            allTextLst.add(  eachElement.getText()  );
+            allTextLst.add(eachElement.getText());
         }
 
-        return  allTextLst ;
+        return allTextLst;
 
     }
 
@@ -81,24 +81,45 @@ public class BrowserUtil {
     }
 
 
-
-    public static void hoverOver(WebElement element){
+    public static void hoverOver(WebElement element) {
         new Actions(DriverSingle.getDriver()).moveToElement(element).pause(2000).perform();
     }
 
 
-    public static boolean isAllSelected(List<WebElement> allFiles){
+    public static boolean isAllSelected(List<WebElement> allFiles) {
 
         for (WebElement file : allFiles) {
 
-            if(!file.isSelected()){
+            if (!file.isSelected()) {
                 return false;
             }
         }
         return true;
     }
 
+    public static void clickingMultipleLinks(List<WebElement> links) {
+
+        for (WebElement eachLink : links) {
+            eachLink.click();
+            BrowserUtil.waitFor(2);
+        }
 
 
+    }
 
+    public static List<String> switchingWindows(Set<String> windows){
+
+        List<String> allTitles = new ArrayList<>();
+
+        for(String eachWindow: windows){
+
+            DriverSingle.getDriver().switchTo().window(eachWindow);
+
+            BrowserUtil.waitFor(3);
+            allTitles.add(DriverSingle.getDriver().getTitle());
+        }
+
+        return allTitles;
+
+    }
 }

@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
                 "me.jvt.cucumber.report.PrettyReports:target"
         },
         dryRun = false,
+        publish = true,
         tags = "@ui"
 )
 

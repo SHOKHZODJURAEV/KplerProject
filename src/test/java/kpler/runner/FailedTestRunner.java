@@ -8,8 +8,9 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-        glue = "src/test/java/kpler/step_definitions",
-        features = "rerun:target/rerun.txt"
+        glue = "kpler/step_definitions",
+        features = "@target/rerun.txt",
+        publish = true
         // tags = ""
 
 

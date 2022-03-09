@@ -30,7 +30,7 @@ public class HomePage {
     @FindBy(xpath = "//button[@class='btn btn-default']")
     public WebElement trialButton;
 
-    @FindBy(className = "nav[class='navbar navbar-fixed-top affix-top']")
+    @FindBy(css = "nav[class='navbar navbar-fixed-top affix-top']")
     public WebElement scrollUp;
 
     @FindBy( css = "[class='navbar navbar-fixed-top affix']")
@@ -43,6 +43,14 @@ public class HomePage {
     @FindBy(xpath = "//ul[@class='nav-dropdown open']//li")
     public List<WebElement> listOfLoginSubmodules;
 
+    @FindBy(xpath = "//div [@class ='container social-and-store']")
+    public WebElement stageSocialStore;
+
+    @FindBy(xpath = "//div [@class ='social-links']//a")
+    public List<WebElement> listofsocialLinks;
+
+    @FindBy(xpath = "//div [@class ='store']//a")
+    public List<WebElement> listofStores;
 
 
     public void clickEachSubmodule(String submoduleName) {
@@ -51,9 +59,4 @@ public class HomePage {
 
 
     }
-
-
-
-
-
 }
